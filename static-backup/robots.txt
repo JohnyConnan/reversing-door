@@ -1,0 +1,11 @@
+# Robots.txt for reverznidvere.cz
+# Reverzní dveře - Nezávislý divadelní soubor
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://reverznidvere.cz/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
