@@ -4,6 +4,9 @@
 # Claude Code local session data
 .claude/
 
+# Local-only planning docs (carry personal/operational details; never publish)
+docs/
+
 # Node / Next.js
 node_modules/
 .next/
