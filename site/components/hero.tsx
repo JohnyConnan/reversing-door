@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, type MouseEvent } from "react"
 import Image from "next/image"
 
 export default function Hero() {
@@ -9,6 +9,18 @@ export default function Hero() {
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  const handleScrollToLanguageSelector = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    const el = document.getElementById("language-selector")
+    if (!el) return
+    const prefersReducedMotion =
+      window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false
+    el.scrollIntoView({
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+      block: "start",
+    })
+  }
 
   return (
     <section
@@ -63,23 +75,62 @@ export default function Hero() {
             BRNO • EST. 2010
           </p>
         </div>
-
-        {/* Decorative line */}
+        
+        {/* Line */}
         <div
           className={`h-px w-32 bg-foreground/20 transition-all delay-500 duration-1000 ${
             mounted ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
           }`}
         />
-
-        {/* Decorative bottom element */}
-        <div
-          className={`absolute bottom-8 left-1/2 -translate-x-1/2 transition-all delay-700 duration-1000 ${
-            mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-          }`}
-        >
-          <div className="h-12 w-px animate-pulse bg-foreground/20" />
-        </div>
       </div>
+
+      {/* Scroll hint */}
+      <a
+        href="#language-selector"
+        onClick={handleScrollToLanguageSelector}
+        aria-label="Sjet na sekci s výběrem jazyka"
+        className="group absolute right-6 top-1/2 z-20 hidden -translate-y-1/2 items-center gap-3 md:flex"
+      >
+        <span className="text-xs tracking-[0.2em] text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+          scroll
+        </span>
+        <span className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground/20 bg-background/30 backdrop-blur-sm transition-colors group-hover:border-foreground/40 group-focus-visible:border-foreground/40">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            className="h-5 w-5 text-foreground/70 transition-transform duration-300 motion-safe:animate-bounce group-hover:translate-y-0.5 group-focus-visible:translate-y-0.5 motion-reduce:animate-none"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </span>
+      </a>
+
+      <a
+        href="#language-selector"
+        onClick={handleScrollToLanguageSelector}
+        aria-label="Sjet na sekci s výběrem jazyka"
+        className="group absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 items-center justify-center md:hidden"
+      >
+        <span className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground/20 bg-background/30 backdrop-blur-sm transition-colors group-hover:border-foreground/40 group-focus-visible:border-foreground/40">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            className="h-5 w-5 text-foreground/70 transition-transform duration-300 motion-safe:animate-bounce group-hover:translate-y-0.5 group-focus-visible:translate-y-0.5 motion-reduce:animate-none"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </span>
+      </a>
     </section>
   )
 }

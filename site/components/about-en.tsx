@@ -31,17 +31,16 @@ export default function AboutEn() {
     >
       <div className="mx-auto max-w-4xl">
         <div
-          className={`mb-16 text-center transition-all duration-1000 ${
+          className={`mb-16 pb-4 text-center transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
           <h2
             id="about-heading"
-            className="mb-4 text-2xl font-light tracking-wide md:text-3xl lg:text-4xl"
+            className="mb-0 text-2xl font-light tracking-wide md:text-3xl lg:text-4xl"
           >
-            About Us
+            about us.
           </h2>
-          <div className="mx-auto h-px w-16 bg-foreground/30" />
         </div>
 
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
@@ -51,12 +50,12 @@ export default function AboutEn() {
               isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
           >
-            <h3 className="mb-6 border-l-2 border-foreground/30 pl-4 text-lg font-semibold tracking-wide">
-              Reversing Door
+            <h3 className="mb-6 text-lg font-semibold tracking-wide">
+              reversing door.
             </h3>
             <div className="space-y-4 leading-relaxed text-muted-foreground">
               <p>
-                <strong className="text-foreground">Reversing Door</strong> is an
+                An 
                 independent theatre ensemble founded in 2010 at the Studio of
                 Theatre and Education at the Theatre Faculty of Janáček Academy of
                 Music and Performing Arts in Brno.
@@ -83,13 +82,12 @@ export default function AboutEn() {
             }`}
             lang="cs"
           >
-            <h3 className="mb-6 border-l-2 border-foreground/30 pl-4 text-lg font-semibold tracking-wide">
-              Reverzní dveře
+            <h3 className="mb-6 text-lg font-semibold tracking-wide">
+              reverzní dveře.
             </h3>
             <div className="space-y-4 leading-relaxed text-muted-foreground">
               <p>
-                <strong className="text-foreground">Reverzní dveře</strong> je
-                nezávislý divadelní soubor, který vznikl v roce 2010 na půdě
+                Nezávislý divadelní soubor, který vznikl v roce 2010 na půdě
                 Ateliéru divadla a výchovy na Divadelní fakultě Janáčkovy akademie
                 múzických umění v Brně.
               </p>
@@ -116,11 +114,11 @@ export default function AboutEn() {
           }`}
         >
           {[
-            "Devised Theatre",
-            "Collective Creation",
-            "Experimental",
-            "JAMU Brno",
-            "LUMOS Theatre",
+            "devised theatre.",
+            "collective creation.",
+            "physical theatre.",
+            "brněnská nezávislá divadla.",
+            "lumos theatre.",
           ].map((tag) => (
             <span
               key={tag}

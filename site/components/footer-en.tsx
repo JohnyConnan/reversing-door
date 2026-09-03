@@ -7,17 +7,9 @@ export default function FooterEn() {
     <footer className="border-t border-foreground/10 bg-background px-4 py-12">
       <div className="mx-auto max-w-4xl">
         <div className="flex flex-col items-center gap-8">
-          {/* Logo */}
-          <div className="text-center">
-            <h2 className="text-xl tracking-[0.2em]">
-              REVERSING DOOR
-            </h2>
-          </div>
-
           {/* Address */}
           <address className="text-center text-sm not-italic text-muted-foreground">
-            <p>Independent Theatre Ensemble</p>
-            <p>Brno, Czech Republic</p>
+            <p>brno. czech republic.</p>
           </address>
 
           {/* Nav */}
@@ -26,30 +18,39 @@ export default function FooterEn() {
             className="flex flex-wrap justify-center gap-6 text-sm"
           >
             <Link
-              href="https://janouchfilip93.wixsite.com/rdweb"
+              href="https://www.instagram.com/reversingdoor/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground transition-colors hover:text-foreground"
             >
-              Web CZ
+              instagram.
             </Link>
             <span className="text-foreground/20">|</span>
             <Link
-              href="http://old.difa.jamu.cz/adv/rd_en.html"
+              href="https://www.facebook.com/Reverznidvere/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground transition-colors hover:text-foreground"
             >
-              Web EN
+              facebook.
             </Link>
             <span className="text-foreground/20">|</span>
             <Link
-              href="https://difa.jamu.cz"
+              href="https://lumos-brno.cz/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground transition-colors hover:text-foreground"
             >
-              DIFA JAMU
+              lumos.
+            </Link>
+            <span className="text-foreground/20">|</span>
+            <Link
+              href="https://brnenskadivadla.cz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
+              bnd.
             </Link>
           </nav>
 

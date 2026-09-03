@@ -27,6 +27,7 @@ export default function LanguageSelectorEn() {
 
   return (
     <section
+      id="language-selector"
       ref={sectionRef}
       className="relative bg-card px-4 py-24 md:py-32"
       aria-labelledby="language-heading"
@@ -41,10 +42,10 @@ export default function LanguageSelectorEn() {
             id="language-heading"
             className="mb-4 text-2xl font-light tracking-wide md:text-3xl"
           >
-            More Information
+            want to know more?
           </h2>
           <p className="text-sm text-muted-foreground">
-            Select your language / Vyberte jazyk
+            projects. where & when. members. contact.
           </p>
         </div>
 
@@ -86,7 +87,7 @@ export default function LanguageSelectorEn() {
 
           {/* English */}
           <Link
-            href="http://old.difa.jamu.cz/adv/rd_en.html"
+            href="https://janouchfilip93.wixsite.com/rdwebeng"
             target="_blank"
             rel="noopener noreferrer"
             className={`group relative transition-all delay-400 duration-1000 ${

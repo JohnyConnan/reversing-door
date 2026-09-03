@@ -27,6 +27,7 @@ export default function LanguageSelector() {
 
   return (
     <section
+      id="language-selector"
       ref={sectionRef}
       className="relative bg-card px-4 py-24 md:py-32"
       aria-labelledby="language-heading"
@@ -42,10 +43,10 @@ export default function LanguageSelector() {
             id="language-heading"
             className="mb-4 text-2xl font-light tracking-wide md:text-3xl"
           >
-            Více informací
+            chceš se dozvědět více informací?
           </h2>
           <p className="text-sm text-muted-foreground">
-            Select your language / Vyberte jazyk
+            projekty. kde a kdy. členové. kontakt.
           </p>
         </div>
 
@@ -88,7 +89,7 @@ export default function LanguageSelector() {
 
           {/* English version */}
           <Link
-            href="http://old.difa.jamu.cz/adv/rd_en.html"
+            href="https://janouchfilip93.wixsite.com/rdwebeng"
             target="_blank"
             rel="noopener noreferrer"
             className={`group relative transition-all delay-400 duration-1000 ${
