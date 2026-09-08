@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     languages: {
       'cs-CZ': '/',
       'en-US': '/en',
+      'x-default': '/',
     },
   },
   icons: {
@@ -146,9 +147,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <link rel="alternate" hrefLang="cs" href="https://reverznidvere.cz" />
-        <link rel="alternate" hrefLang="en" href="https://reverznidvere.cz/en" />
-        <link rel="alternate" hrefLang="x-default" href="https://reverznidvere.cz" />
+        {/* No-JS fallback: the reveal wrappers ship as opacity-0 and are un-hidden by JS */}
+        <noscript>
+          <style>{`.translate-y-8.opacity-0,.translate-y-4.opacity-0,.scale-x-0.opacity-0,.scale-y-0.opacity-0{opacity:1!important;translate:none!important;scale:none!important}`}</style>
+        </noscript>
       </head>
       <body className={`${adventPro.variable} font-main antialiased`}>
         {children}

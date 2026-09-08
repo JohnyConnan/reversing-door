@@ -13,13 +13,26 @@ export const metadata: Metadata = {
     languages: {
       "cs-CZ": "/",
       "en-US": "/en",
+      "x-default": "/",
     },
   },
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    alternateLocale: "cs_CZ",
+    url: "https://reverznidvere.cz/en",
+    siteName: "Reverzní dveře",
     title: "Reversing Door | Independent Theatre Ensemble",
     description:
       "Independent theatre ensemble from Brno, Czech Republic. Devised theatre and collective creation since 2010.",
-    locale: "en_US",
+    images: [
+      {
+        url: "https://reverznidvere.cz/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Reversing Door - Independent Theatre Ensemble",
+      },
+    ],
   },
 }
 

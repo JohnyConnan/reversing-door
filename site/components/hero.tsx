@@ -40,7 +40,7 @@ export default function Hero() {
 
       {/* Main content */}
       <div
-        className={`relative z-10 flex flex-col items-center gap-8 transition-all duration-1000 ${
+        className={`relative z-10 flex flex-col items-center gap-8 transition-all motion-reduce:transition-none duration-1000 ${
           mounted ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
         }`}
       >
@@ -64,7 +64,7 @@ export default function Hero() {
 
         {/* Tagline */}
         <div
-          className={`flex flex-col items-center gap-2 text-center transition-all delay-300 duration-1000 ${
+          className={`flex flex-col items-center gap-2 text-center transition-all motion-reduce:transition-none delay-300 duration-1000 ${
             mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
           }`}
         >
@@ -78,7 +78,7 @@ export default function Hero() {
         
         {/* Line */}
         <div
-          className={`h-px w-32 bg-foreground/20 transition-all delay-500 duration-1000 ${
+          className={`h-px w-32 bg-foreground/20 transition-all motion-reduce:transition-none delay-500 duration-1000 ${
             mounted ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
           }`}
         />

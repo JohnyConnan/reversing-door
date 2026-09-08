@@ -32,7 +32,7 @@ export default function About() {
       <div className="mx-auto max-w-4xl">
         {/* Section heading */}
         <div
-          className={`mb-16 pb-4 text-center transition-all duration-1000 ${
+          className={`mb-16 pb-4 text-center transition-all motion-reduce:transition-none duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
@@ -48,7 +48,7 @@ export default function About() {
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
           {/* Czech description */}
           <article
-            className={`transition-all delay-200 duration-1000 ${
+            className={`transition-all motion-reduce:transition-none delay-200 duration-1000 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
             lang="cs"
@@ -77,7 +77,7 @@ export default function About() {
 
           {/* English description */}
           <article
-            className={`transition-all delay-400 duration-1000 ${
+            className={`transition-all motion-reduce:transition-none delay-400 duration-1000 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
             lang="en"
@@ -108,7 +108,7 @@ export default function About() {
 
         {/* Keywords/tags for SEO visibility */}
         <div
-          className={`mt-16 flex flex-wrap justify-center gap-3 transition-all delay-500 duration-1000 ${
+          className={`mt-16 flex flex-wrap justify-center gap-3 transition-all motion-reduce:transition-none delay-500 duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >

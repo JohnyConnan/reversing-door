@@ -17,6 +17,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -42,6 +43,23 @@ jobs:
 
       - name: Build
         run: pnpm build
+        working-directory: site
+
+      - name: Verify export shape
+        # Guards the URL inventory the site depends on (plan KTD-2: /en must export
+        # as out/en.html, never out/en/index.html) and the metadata parity fixes.
+        run: |
+          set -e
+          test -f out/index.html
+          test -f out/en.html
+          test ! -e out/en/index.html
+          test -f out/404.html
+          test -f out/sitemap.xml
+          test -f out/robots.txt
+          test -f out/og-image.jpg
+          test -f out/ico/favicon.ico
+          grep -q 'property="og:image"' out/en.html
+          grep -qi 'hreflang="x-default"' out/index.html
         working-directory: site
 
       - name: Upload Pages artifact

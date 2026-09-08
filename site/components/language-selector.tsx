@@ -35,7 +35,7 @@ export default function LanguageSelector() {
       <div className="mx-auto max-w-4xl">
         {/* Section heading */}
         <div
-          className={`mb-16 text-center transition-all duration-1000 ${
+          className={`mb-16 text-center transition-all motion-reduce:transition-none duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
@@ -57,14 +57,14 @@ export default function LanguageSelector() {
             href="https://janouchfilip93.wixsite.com/rdweb"
             target="_blank"
             rel="noopener noreferrer"
-            className={`group relative transition-all delay-200 duration-1000 ${
+            className={`group relative transition-all motion-reduce:transition-none delay-200 duration-1000 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
             aria-label="Navštívit českou verzi webu Reverzní dveře"
           >
-            <div className="relative overflow-hidden transition-all duration-500">
+            <div className="relative overflow-hidden transition-all motion-reduce:transition-none duration-500">
               {/* Glow effect on hover */}
-              <div className="absolute -inset-1 bg-foreground/0 opacity-0 blur-md transition-all duration-500 group-hover:bg-foreground/30 group-hover:opacity-100" />
+              <div className="absolute -inset-1 bg-foreground/0 opacity-0 blur-md transition-all motion-reduce:transition-none duration-500 group-hover:bg-foreground/30 group-hover:opacity-100" />
               <Image
                 src="/images/link_cs.gif"
                 alt="Reverzní dveře - Česká verze"
@@ -77,12 +77,12 @@ export default function LanguageSelector() {
 
           {/* Divider */}
           <div
-            className={`hidden h-32 w-px bg-foreground/20 md:block transition-all delay-300 duration-1000 ${
+            className={`hidden h-32 w-px bg-foreground/20 md:block transition-all motion-reduce:transition-none delay-300 duration-1000 ${
               isVisible ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
             }`}
           />
           <div
-            className={`h-px w-32 bg-foreground/20 md:hidden transition-all delay-300 duration-1000 ${
+            className={`h-px w-32 bg-foreground/20 md:hidden transition-all motion-reduce:transition-none delay-300 duration-1000 ${
               isVisible ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
             }`}
           />
@@ -92,14 +92,14 @@ export default function LanguageSelector() {
             href="https://janouchfilip93.wixsite.com/rdwebeng"
             target="_blank"
             rel="noopener noreferrer"
-            className={`group relative transition-all delay-400 duration-1000 ${
+            className={`group relative transition-all motion-reduce:transition-none delay-400 duration-1000 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
             aria-label="Visit Reversing Door English website"
           >
-            <div className="relative overflow-hidden transition-all duration-500">
+            <div className="relative overflow-hidden transition-all motion-reduce:transition-none duration-500">
               {/* Glow effect on hover */}
-              <div className="absolute -inset-1 bg-foreground/0 opacity-0 blur-md transition-all duration-500 group-hover:bg-foreground/30 group-hover:opacity-100" />
+              <div className="absolute -inset-1 bg-foreground/0 opacity-0 blur-md transition-all motion-reduce:transition-none duration-500 group-hover:bg-foreground/30 group-hover:opacity-100" />
               <Image
                 src="/images/link_en.gif"
                 alt="Reversing Door - English version"

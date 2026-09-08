@@ -1,7 +1,8 @@
 import Link from "next/link"
+import Year from "@/components/year"
 
 export default function FooterEn() {
-  const currentYear = new Date().getFullYear()
+  const buildYear = new Date().getFullYear()
 
   return (
     <footer className="border-t border-foreground/10 bg-background px-4 py-12">
@@ -56,9 +57,9 @@ export default function FooterEn() {
 
           {/* Copyright */}
           <div className="border-t border-foreground/10 pt-8 text-center text-xs text-muted-foreground">
-            <p>© {currentYear} Reversing Door. All rights reserved.</p>
+            <p>© <Year initial={buildYear} /> Reversing Door. All rights reserved.</p>
             <p className="mt-1">
-              © {currentYear} Reverzní dveře z.s. Všechna práva vyhrazena.
+              © <Year initial={buildYear} /> Reverzní dveře z.s. Všechna práva vyhrazena.
             </p>
           </div>
 
