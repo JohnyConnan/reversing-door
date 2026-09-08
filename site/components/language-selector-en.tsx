@@ -1,42 +1,16 @@
-"use client"
-
-import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
 export default function LanguageSelectorEn() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.2 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <section
       id="language-selector"
-      ref={sectionRef}
       className="relative bg-card px-4 py-24 md:py-32"
       aria-labelledby="language-heading"
     >
       <div className="mx-auto max-w-4xl">
         <div
-          className={`mb-16 text-center transition-all motion-reduce:transition-none duration-1000 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
+          className="mb-16 text-center animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-both motion-reduce:animate-none"
         >
           <h2
             id="language-heading"
@@ -55,9 +29,7 @@ export default function LanguageSelectorEn() {
             href="https://janouchfilip93.wixsite.com/rdweb"
             target="_blank"
             rel="noopener noreferrer"
-            className={`group relative transition-all motion-reduce:transition-none delay-200 duration-1000 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-            }`}
+            className="group relative animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-both motion-reduce:animate-none"
             aria-label="Visit Czech website for Reverzní dveře"
           >
             <div className="relative overflow-hidden transition-all motion-reduce:transition-none duration-500">
@@ -75,14 +47,10 @@ export default function LanguageSelectorEn() {
 
           {/* Divider */}
           <div
-            className={`hidden h-32 w-px bg-foreground/20 transition-all motion-reduce:transition-none delay-300 duration-1000 md:block ${
-              isVisible ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
-            }`}
+            className="hidden h-32 w-px bg-foreground/20 animate-in fade-in duration-1000 delay-300 fill-mode-both motion-reduce:animate-none md:block"
           />
           <div
-            className={`h-px w-32 bg-foreground/20 transition-all motion-reduce:transition-none delay-300 duration-1000 md:hidden ${
-              isVisible ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
-            }`}
+            className="h-px w-32 bg-foreground/20 animate-in fade-in duration-1000 delay-300 fill-mode-both motion-reduce:animate-none md:hidden"
           />
 
           {/* English */}
@@ -90,9 +58,7 @@ export default function LanguageSelectorEn() {
             href="https://janouchfilip93.wixsite.com/rdwebeng"
             target="_blank"
             rel="noopener noreferrer"
-            className={`group relative transition-all motion-reduce:transition-none delay-400 duration-1000 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-            }`}
+            className="group relative animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 fill-mode-both motion-reduce:animate-none"
             aria-label="Visit Reversing Door English website"
           >
             <div className="relative overflow-hidden transition-all motion-reduce:transition-none duration-500">

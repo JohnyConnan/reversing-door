@@ -1,14 +1,7 @@
-import React from "react"
 import type { Metadata, Viewport } from 'next'
-import { Advent_Pro } from 'next/font/google'
-import './globals.css'
 
-const adventPro = Advent_Pro({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-main"
-})
-
-export const metadata: Metadata = {
+// Shared by both root layouts (app/(cs) and app/(en)). Pages override what differs.
+export const siteMetadata: Metadata = {
   title: {
     default: 'Reverzní dveře | Nezávislý divadelní soubor Brno',
     template: '%s | Reverzní dveře'
@@ -100,14 +93,14 @@ export const metadata: Metadata = {
     generator: 'v0.app'
 }
 
-export const viewport: Viewport = {
+export const siteViewport: Viewport = {
   themeColor: '#000000',
   width: 'device-width',
   initialScale: 1,
 }
 
 // JSON-LD Structured Data for SEO
-const jsonLd = {
+export const siteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'TheaterGroup',
   name: 'Reverzní dveře',
@@ -132,29 +125,4 @@ const jsonLd = {
     '@type': 'Country',
     name: 'Czech Republic'
   }
-}
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  return (
-    <html lang="cs" className="dark">
-      <head>
-        <meta name="msapplication-config" content="/ico/browserconfig.xml" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        {/* No-JS fallback: the reveal wrappers ship as opacity-0 and are un-hidden by JS */}
-        <noscript>
-          <style>{`.translate-y-8.opacity-0,.translate-y-4.opacity-0,.scale-x-0.opacity-0,.scale-y-0.opacity-0{opacity:1!important;translate:none!important;scale:none!important}`}</style>
-        </noscript>
-      </head>
-      <body className={`${adventPro.variable} font-main antialiased`}>
-        {children}
-      </body>
-    </html>
-  )
 }

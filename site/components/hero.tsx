@@ -1,15 +1,9 @@
 "use client"
 
-import { useEffect, useState, type MouseEvent } from "react"
+import type { MouseEvent } from "react"
 import Image from "next/image"
 
 export default function Hero() {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
   const handleScrollToLanguageSelector = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
     const el = document.getElementById("language-selector")
@@ -40,19 +34,17 @@ export default function Hero() {
 
       {/* Main content */}
       <div
-        className={`relative z-10 flex flex-col items-center gap-8 transition-all motion-reduce:transition-none duration-1000 ${
-          mounted ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-        }`}
+        className="relative z-10 flex w-full flex-col items-center gap-8 animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-both motion-reduce:animate-none"
       >
         {/* Logo */}
-        <div className="relative">
+        <div className="relative w-full max-w-lg md:max-w-2xl">
           <div className="absolute -inset-4 bg-foreground/5 blur-2xl" />
           <Image
             src="/images/logo_rd.jpg"
             alt="Reverzní dveře - Logo nezávislého divadelního souboru"
             width={800}
             height={400}
-            className="relative h-auto w-full max-w-lg md:max-w-2xl"
+            className="relative h-auto w-full"
             priority
           />
         </div>
@@ -64,9 +56,7 @@ export default function Hero() {
 
         {/* Tagline */}
         <div
-          className={`flex flex-col items-center gap-2 text-center transition-all motion-reduce:transition-none delay-300 duration-1000 ${
-            mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-          }`}
+          className="flex flex-col items-center gap-2 text-center animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300 fill-mode-both motion-reduce:animate-none"
         >
           <p className="text-lg font-light tracking-[0.3em] text-foreground/80 md:text-xl">
             NEZÁVISLÝ DIVADELNÍ SOUBOR
@@ -78,9 +68,7 @@ export default function Hero() {
         
         {/* Line */}
         <div
-          className={`h-px w-32 bg-foreground/20 transition-all motion-reduce:transition-none delay-500 duration-1000 ${
-            mounted ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
-          }`}
+          className="h-px w-32 bg-foreground/20 animate-in fade-in duration-1000 delay-500 fill-mode-both motion-reduce:animate-none"
         />
       </div>
 

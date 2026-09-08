@@ -1,40 +1,14 @@
-"use client"
-
-import { useEffect, useRef, useState } from "react"
 
 export default function About() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.2 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <section
-      ref={sectionRef}
       className="relative min-h-screen bg-background px-4 py-24 md:py-32"
       aria-labelledby="about-heading"
     >
       <div className="mx-auto max-w-4xl">
         {/* Section heading */}
         <div
-          className={`mb-16 pb-4 text-center transition-all motion-reduce:transition-none duration-1000 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
+          className="mb-16 pb-4 text-center animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-both motion-reduce:animate-none"
         >
           <h2
             id="about-heading"
@@ -48,9 +22,7 @@ export default function About() {
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
           {/* Czech description */}
           <article
-            className={`transition-all motion-reduce:transition-none delay-200 duration-1000 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-            }`}
+            className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-both motion-reduce:animate-none"
             lang="cs"
           >
             <h3 className="mb-6 text-lg font-semibold tracking-wide">
@@ -77,9 +49,7 @@ export default function About() {
 
           {/* English description */}
           <article
-            className={`transition-all motion-reduce:transition-none delay-400 duration-1000 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-            }`}
+            className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-400 fill-mode-both motion-reduce:animate-none"
             lang="en"
           >
             <h3 className="mb-6 text-lg font-semibold tracking-wide">
@@ -108,9 +78,7 @@ export default function About() {
 
         {/* Keywords/tags for SEO visibility */}
         <div
-          className={`mt-16 flex flex-wrap justify-center gap-3 transition-all motion-reduce:transition-none delay-500 duration-1000 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
+          className="mt-16 flex flex-wrap justify-center gap-3 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both motion-reduce:animate-none"
         >
           {[
             "autorské divadlo.",

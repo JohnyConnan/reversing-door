@@ -60,6 +60,9 @@ jobs:
           test -f out/ico/favicon.ico
           grep -q 'property="og:image"' out/en.html
           grep -qi 'hreflang="x-default"' out/index.html
+          grep -q '<html lang="cs"' out/index.html
+          grep -q '<html lang="en"' out/en.html
+          test -f out/fonts/advent-pro-latin.woff2
         working-directory: site
 
       - name: Upload Pages artifact

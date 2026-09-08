@@ -53,6 +53,13 @@ export default function FooterEn() {
             >
               bnd.
             </Link>
+            <span className="text-foreground/20">|</span>
+            <Link
+              href="/"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
+              česky.
+            </Link>
           </nav>
 
           {/* Copyright */}
